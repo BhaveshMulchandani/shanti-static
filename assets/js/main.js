@@ -27,3 +27,20 @@ document.querySelectorAll('[data-beforeafter]').forEach((root) => {
   update(Number(range.value));
   range.addEventListener('input', (e) => update(Number(e.target.value)));
 });
+
+// const servicesBtn = document.getElementById("servicesBtn");
+// const servicesMenu = document.getElementById("servicesMenu");
+
+// servicesBtn.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   servicesMenu.classList.toggle("active");
+// });
+
+// document.addEventListener("click", (e) => {
+//   if (
+//     !servicesBtn.contains(e.target) &&
+//     !servicesMenu.contains(e.target)
+//   ) {
+//     servicesMenu.classList.remove("active");
+//   }
+// });
