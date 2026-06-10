@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Service</title>
+  </head>
+  <body>
+    <h1>Create Service</h1>
+
+    <form action="/admin/services/create" method="POST">
+      <div>
+        <label>Service Name</label>
+        <input type="text" name="title" required />
+      </div>
+
+      <br />
+
+      <div>
+        <label>Slug</label>
+        <input type="text" name="slug" placeholder="braces" required />
+      </div>
+
+      <br />
+
+      <div>
+        <label>Short Description</label>
+        <textarea name="shortDescription" rows="4"></textarea>
+      </div>
+
+      <br />
+
+      <div>
+        <label>Content</label>
+        <textarea name="content" rows="10"></textarea>
+      </div>
+
+      <br />
+
+      <div>
+        <label>Meta Title</label>
+        <input type="text" name="metaTitle" />
+      </div>
+
+      <br />
+
+      <div>
+        <label>Meta Description</label>
+        <textarea name="metaDescription" rows="4"></textarea>
+      </div>
+
+      <br />
+
+      <div>
+        <label>Featured Image URL</label>
+        <input
+          type="text"
+          name="featuredImage"
+          placeholder="https://example.com/braces.jpg"
+        />
+      </div>
+
+      <br />
+
+      <button type="submit">Create Service</button>
+    </form>
+  </body>
+</html>
