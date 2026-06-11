@@ -13,17 +13,17 @@
       property="og:description"
       content="Where every smile feels confident."
     />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body class="page-dental fade-in">
     <div class="switch-banner dental">
       Looking for skin, hair or aesthetic care?
-      <a href="aesthetic.html">✨ Switch to Shanti Aesthetic Clinic →</a>
+      <a href="/aesthetic">✨ Switch to Shanti Aesthetic Clinic →</a>
     </div>
 
     <header class="site-nav dental">
       <div class="nav-inner">
-        <a href="dental.html" class="brand dental"
+        <a href="/dental" class="brand dental"
           ><span class="em">🦷</span><span>Shanti Dental Clinic</span></a
         >
         <nav class="nav-links">
@@ -32,21 +32,19 @@
             <a href="#" id="servicesBtn"> Services </a>
 
             <div class="services-dropdown-menu" id="servicesMenu">
-              <a href="aligners.html">Aligners</a>
-              <a href="braces.html">Braces</a>
-              <a href="implants.html">Dental Implants & Dentures</a>
-              <a href="pediatric.html"
-                >Paediatric (Child) & Habit Converting Dentistry</a
-              >
-              <a href="jawproblems.html">Jaw Problems & TMJ</a>
-              <a href="rootcanal.html">Root Canal Treatment</a>
-              <a href="wisdomtooth.html">Wisdom Tooth & 3rd Molar Extraction</a>
-              <a href="teethwhitening.html">Teeth Whitening</a>
-              <a href="smiledesigning.html">Smile Designing</a>
-            </div>
+
+  <% services.forEach(service => { %>
+
+    <a href="/services/<%= service.slug %>">
+      <%= service.title %>
+    </a>
+
+  <% }) %>
+
+</div>
           </div>
           <a href="#gallery">Gallery</a>
-          <a href="aesthetic.html" class="pill-switch to-aesthetic"
+          <a href="/aesthetic" class="pill-switch to-aesthetic"
             >✨ Switch to Aesthetic</a
           >
           <button class="btn-book dental">
@@ -163,7 +161,7 @@
         </div>
         <div class="hero-image dental fade-up">
           <div class="glow"></div>
-          <img src="assets/images/dental-hero.jpg" alt="Modern dental clinic" />
+          <img src="/images/dental-hero.jpg" alt="Modern dental clinic" />
         </div>
       </div>
     </section>
@@ -174,109 +172,29 @@
           <span class="kicker dental">Our Services</span>
           <h2 class="dental">Comprehensive care for every smile.</h2>
         </div>
-        <div class="grid-cards">
-          <a href="aligners.html" class="service-card dental service-link">
-            <div class="icon-box">
-              <i data-lucide="sparkle"></i>
-            </div>
-            <h3>Aligners</h3>
-            <p>
-              Veneers, professional whitening and structural alignment for a
-              polished, natural smile.
-            </p>
-          </a>
-          <a href="braces.html" class="service-card dental service-link">
-            <div class="icon-box">
-              <i data-lucide="stethoscope"></i>
-            </div>
-            <h3>Braces</h3>
-            <p>
-              Long-lasting, high-precision root replacements that look and feel
-              completely natural.
-            </p>
-          </a>
-          <a href="implants.html" class="service-card dental service-link">
-            <div class="icon-box">
-              <i data-lucide="smile"></i>
-            </div>
-            <h3>Dental Implants & Dentures</h3>
-            <p>
-              Invisalign clear aligners and traditional braces tailored to your
-              facial structure.
-            </p>
-          </a>
-          <a href="pediatric.html" class="service-card dental service-link">
-            <div class="icon-box">
-              <i data-lucide="shield-check"></i>
-            </div>
-            <h3>Paediatric (Child) & Habit Converting Dentistry</h3>
-            <p>
-              Routine cleanings, preventative checks and gentle care for the
-              whole family.
-            </p>
-          </a>
+<div class="grid-cards">
 
-          <a href="jawproblems.html" class="service-card dental service-link">
-            <div class="icon-box">
-              <i data-lucide="shield-check"></i>
-            </div>
-            <h3>Jaw Problems & TMJ</h3>
-            <p>
-              Routine cleanings, preventative checks and gentle care for the
-              whole family.
-            </p>
-          </a>
+  <% services.forEach(service => { %>
 
-          <a href="rootcanal.html" class="service-card dental service-link">
-            <div class="icon-box">
-              <i data-lucide="shield-check"></i>
-            </div>
-            <h3>Root Canal Treatment</h3>
-            <p>
-              Routine cleanings, preventative checks and gentle care for the
-              whole family.
-            </p>
-          </a>
+    <a
+      href="/services/<%= service.slug %>"
+      class="service-card dental service-link"
+    >
 
-          <a href="wisdomtooth.html" class="service-card dental service-link">
-            <div class="icon-box">
-              <i data-lucide="shield-check"></i>
-            </div>
-            <h3>Wisdom Tooth & 3rd Molar Extraction</h3>
-            <p>
-              Routine cleanings, preventative checks and gentle care for the
-              whole family.
-            </p>
-          </a>
+        <img
+          src="/images/dental_icon.jpg"
+          alt="<%= service.title %>"
+          class="service-icon"
+        >
 
-          <a
-            href="teethwhitening.html"
-            class="service-card dental service-link"
-          >
-            <div class="icon-box">
-              <i data-lucide="shield-check"></i>
-            </div>
-            <h3>Teeth Whitening</h3>
-            <p>
-              Routine cleanings, preventative checks and gentle care for the
-              whole family.
-            </p>
-          </a>
+      <h3>
+        <%= service.title %>
+      </h3>
+    </a>
 
-          <a
-            href="smiledesigning.html"
-            class="service-card dental service-link"
-          >
-            <div class="icon-box">
-              <i data-lucide="shield-check"></i>
-            </div>
-            <h3>Smile Designing</h3>
-            <p>
-              Routine cleanings, preventative checks and gentle care for the
-              whole family.
-            </p>
-          </a>
-        </div>
+  <% }) %>
+
+</div>
       </div>
     </section>
 
@@ -288,10 +206,10 @@
         </div>
 
         <div class="beforeafter" data-beforeafter>
-          <img src="assets/images/smile-1.jpg" alt="After" class="ba-img" />
+          <img src="/images/smile-1.jpg" alt="After" class="ba-img" />
           <div class="ba-before-wrap" data-ba-before>
             <img
-              src="assets/images/smile-1.jpg"
+              src="/images/smile-1.jpg"
               alt="Before"
               style="width: 200%"
             />
@@ -315,21 +233,21 @@
         <div class="thumb-grid">
           <div class="thumb">
             <img
-              src="assets/images/smile-1.jpg"
+              src="/images/smile-1.jpg"
               alt="Smile transformation"
               loading="lazy"
             />
           </div>
           <div class="thumb">
             <img
-              src="assets/images/smile-1.jpg"
+              src="/images/smile-1.jpg"
               alt="Smile transformation"
               loading="lazy"
             />
           </div>
           <div class="thumb">
             <img
-              src="assets/images/smile-1.jpg"
+              src="/images/smile-1.jpg"
               alt="Smile transformation"
               loading="lazy"
             />
@@ -435,6 +353,6 @@
     </div>
 
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

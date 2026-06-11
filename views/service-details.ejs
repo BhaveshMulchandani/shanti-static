@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>
+    <%= service.seo?.metaTitle || service.title %>
+  </title>
+
+  <meta
+    name="description"
+    content="<%= service.seo?.metaDescription || '' %>"
+  >
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <!-- TOP BANNER -->
+
+  <div class="switch-banner dental">
+    Looking for skin, hair or aesthetic care?
+    <a href="/aesthetic">✨ Switch to Shanti Aesthetic Clinic →</a>
+  </div>
+
+  <!-- NAVBAR -->
+
+  <header class="site-nav dental">
+    <div class="nav-inner">
+
+      <a href="/dental" class="brand dental">
+        🦷 Shanti Dental Clinic
+      </a>
+
+      <nav class="nav-links">
+        <a href="/dental">Home</a>
+        <a href="/dental#services">Services</a>
+        <a href="/dental#gallery">Gallery</a>
+
+        <button class="btn-book dental">
+          Book Appointment
+        </button>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="service-hero">
+
+    <% if(service.featuredImage){ %>
+
+      <img
+        src="<%= service.featuredImage %>"
+        alt="<%= service.title %>"
+      >
+
+    <% } %>
+
+    <div class="service-overlay">
+
+      <div class="container">
+
+        <h1>
+          <%= service.title %>
+        </h1>
+
+        <p>
+          <%= service.shortDescription %>
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTENT -->
+
+  <section class="service-content">
+
+    <div class="container">
+
+      <div class="service-article">
+
+        <%- service.content %>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+
+        <p>
+          © 2026 Shanti Clinic Group
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+</html>

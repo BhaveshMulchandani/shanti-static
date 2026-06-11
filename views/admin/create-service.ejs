@@ -1,66 +1,293 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Create Service</title>
-  </head>
-  <body>
-    <h1>Create Service</h1>
+<head>
+  <title>Create Service</title>
 
-    <form action="/admin/services/create" method="POST">
-      <div>
-        <label>Service Name</label>
-        <input type="text" name="title" required />
-      </div>
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
 
-      <br />
+    h1{
+      margin-bottom: 30px;
+    }
 
-      <div>
-        <label>Slug</label>
-        <input type="text" name="slug" placeholder="braces" required />
-      </div>
+    .form-group{
+      margin-bottom: 20px;
+    }
 
-      <br />
+    label{
+      display:block;
+      margin-bottom:8px;
+      font-weight:bold;
+    }
 
-      <div>
-        <label>Short Description</label>
-        <textarea name="shortDescription" rows="4"></textarea>
-      </div>
+    input,
+    textarea{
+      width:100%;
+      padding:12px;
+      box-sizing:border-box;
+    }
 
-      <br />
+    textarea{
+      resize:vertical;
+    }
 
-      <div>
-        <label>Content</label>
-        <textarea name="content" rows="10"></textarea>
-      </div>
+    .section{
+      border:1px solid #ddd;
+      padding:20px;
+      margin-bottom:30px;
+      border-radius:8px;
+    }
 
-      <br />
+    .section-title{
+      margin-top:0;
+      margin-bottom:20px;
+    }
 
-      <div>
-        <label>Meta Title</label>
-        <input type="text" name="metaTitle" />
-      </div>
+    button{
+      padding:12px 24px;
+      cursor:pointer;
+    }
+  </style>
+</head>
 
-      <br />
+<body>
 
-      <div>
-        <label>Meta Description</label>
-        <textarea name="metaDescription" rows="4"></textarea>
-      </div>
+<h1>Create Service</h1>
 
-      <br />
+<form action="/admin/services/create" method="POST">
 
-      <div>
-        <label>Featured Image URL</label>
-        <input
-          type="text"
-          name="featuredImage"
-          placeholder="https://example.com/braces.jpg"
-        />
-      </div>
+  <!-- BASIC DETAILS -->
 
-      <br />
+  <div class="section">
 
-      <button type="submit">Create Service</button>
-    </form>
-  </body>
+    <h2 class="section-title">
+      Basic Information
+    </h2>
+
+    <div class="form-group">
+      <label>Service Name</label>
+      <input
+        type="text"
+        name="title"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label>Slug</label>
+      <input
+        type="text"
+        name="slug"
+        placeholder="teeth-whitening"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label>Short Description</label>
+      <textarea
+        name="shortDescription"
+        rows="3"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Hero Description</label>
+      <textarea
+        name="heroDescription"
+        rows="3"
+      ></textarea>
+    </div>
+
+  </div>
+
+  <!-- IMAGES -->
+
+  <div class="section">
+
+    <h2 class="section-title">
+      Images
+    </h2>
+
+    <div class="form-group">
+      <label>Icon URL</label>
+      <input
+        type="text"
+        name="icon"
+        placeholder="https://..."
+      >
+    </div>
+
+    <div class="form-group">
+      <label>Hero Image URL</label>
+      <input
+        type="text"
+        name="heroImage"
+        placeholder="https://..."
+      >
+    </div>
+
+    <div class="form-group">
+      <label>Featured Image URL</label>
+      <input
+        type="text"
+        name="featuredImage"
+        placeholder="https://..."
+      >
+    </div>
+
+  </div>
+
+  <!-- MAIN CONTENT -->
+
+  <div class="section">
+
+    <h2 class="section-title">
+      Main Content
+    </h2>
+
+    <div class="form-group">
+      <label>Content</label>
+
+      <textarea
+        name="content"
+        rows="15"
+      ></textarea>
+
+    </div>
+
+  </div>
+
+  <!-- BENEFITS -->
+
+  <div class="section">
+
+    <h2 class="section-title">
+      Benefits
+    </h2>
+
+    <div class="form-group">
+      <label>
+        One Benefit Per Line
+      </label>
+
+      <textarea
+        name="benefits"
+        rows="6"
+        placeholder="Fast Treatment&#10;Painless Procedure&#10;Natural Looking Results"
+      ></textarea>
+
+    </div>
+
+  </div>
+
+  <!-- COST -->
+
+  <div class="section">
+
+    <h2 class="section-title">
+      Cost Section
+    </h2>
+
+    <div class="form-group">
+      <label>Cost Title</label>
+
+      <input
+        type="text"
+        name="costTitle"
+      >
+    </div>
+
+    <div class="form-group">
+      <label>Cost Description</label>
+
+      <textarea
+        name="costDescription"
+        rows="5"
+      ></textarea>
+
+    </div>
+
+  </div>
+
+  <!-- FAQ -->
+
+  <div class="section">
+
+    <h2 class="section-title">
+      FAQs
+    </h2>
+
+    <div class="form-group">
+      <label>FAQ 1 Question</label>
+      <input type="text" name="faqQuestion1">
+    </div>
+
+    <div class="form-group">
+      <label>FAQ 1 Answer</label>
+      <textarea name="faqAnswer1"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>FAQ 2 Question</label>
+      <input type="text" name="faqQuestion2">
+    </div>
+
+    <div class="form-group">
+      <label>FAQ 2 Answer</label>
+      <textarea name="faqAnswer2"></textarea>
+    </div>
+
+  </div>
+
+  <!-- SEO -->
+
+  <div class="section">
+
+    <h2 class="section-title">
+      SEO
+    </h2>
+
+    <div class="form-group">
+      <label>Meta Title</label>
+
+      <input
+        type="text"
+        name="metaTitle"
+      >
+    </div>
+
+    <div class="form-group">
+      <label>Meta Description</label>
+
+      <textarea
+        name="metaDescription"
+        rows="4"
+      ></textarea>
+
+    </div>
+
+    <div class="form-group">
+      <label>OG Image</label>
+
+      <input
+        type="text"
+        name="ogImage"
+      >
+    </div>
+
+  </div>
+
+  <button type="submit">
+    Create Service
+  </button>
+
+</form>
+
+</body>
 </html>

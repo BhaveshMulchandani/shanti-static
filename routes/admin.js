@@ -13,4 +13,6 @@ router.post(
   adminController.createService
 );
 
+router.get("/services", adminController.getAllServices);
+
 module.exports = router;
