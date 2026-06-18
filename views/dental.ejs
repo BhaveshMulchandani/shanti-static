@@ -23,9 +23,10 @@
 
     <header class="site-nav dental">
       <div class="nav-inner">
-        <a href="/dental" class="brand dental"
-          ><span class="em">🦷</span><span>Shanti Dental Clinic</span></a
-        >
+        <a href="/dental" class="brand dental">
+  <img src="/images/Transparent Logo.png" alt="Shanti Dental Clinic" class="logo">
+  <span>Shanti Dental Clinic</span>
+</a>
         <nav class="nav-links">
           <a href="#home">Home</a>
           <div class="services-dropdown-wrapper">
@@ -73,7 +74,7 @@
         <div class="myclass4">
           <div class="myclass5">
             <span>SHANTI DENTAL AND AESTHETIC CLINIC</span>
-            <span class="stars">★★★★★</span>
+            <span class="star">★★★★★</span>
             <span style="font-size: 16px">5.0/5.0</span>
           </div>
           <h1>
@@ -125,6 +126,76 @@
         </div>
       </div>
     </section>
+<!-- marquee section  -->
+
+<%
+const reviews = [
+{
+name: "Dr. Kesha Joshi",
+review: "Painless wisdom tooth surgery, excellent care, and complete transparency throughout the treatment. Dr. Nikunj Gupta made the entire experience comfortable and hassle-free. Highly recommended."
+},
+{
+name: "Kaamil Makwana",
+review: "It was my first time getting a wisdom tooth extracted, and the service was excellent. The team made the entire process very simple, and I hardly felt any pain. The procedure was smooth, with a great doctor and supportive staff. Must visit for any dental treatment."
+},
+{
+name: "Chetan Thakor",
+review: "Amazing service at Shanti Dental Clinic. Dr. Nikunj Gupta has a very gentle hand and great expertise. My treatment was completely pain-free."
+},
+{
+name: "Manisha Agrawal",
+review: "I would like to sincerely thank Dr. Hinal for the excellent root canal treatment. She was very professional, gentle, and made the entire procedure comfortable and painless. I truly appreciate her care and dedication."
+},
+{
+name: "Zuber Shaikh",
+review: "I was very nervous about dental treatment, but Dr. Nikunj Gupta made the whole process comfortable. Shanti Dental Clinic has modern equipment and maintains excellent hygiene. Outstanding service and caring staff."
+},
+{
+name: "Patel Nimesh",
+review: "My implant consultation with Dr. Nikunj Gupta was highly informative and reassuring. Shanti Dental Clinic is clean, well-organized, and equipped with modern facilities. Dr. Nikunj took the time to explain everything clearly, which gave me complete confidence in his expertise and treatment approach."
+}
+];
+
+%>
+
+<section class="reviews-section">
+  <div class="reviews-header">
+    <h2>What Our Patients Say</h2>
+    <p>Trusted by hundreds of happy patients</p>
+  </div>
+
+  <div class="marquee">
+    <div class="marquee-content">
+
+      <% reviews.forEach(review => { %>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+
+          <h4><%= review.name %></h4>
+
+          <p>
+            <%= review.review %>
+          </p>
+        </div>
+      <% }) %>
+
+      <% reviews.forEach(review => { %>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+
+          <h4><%= review.name %></h4>
+
+          <p>
+            <%= review.review %>
+          </p>
+        </div>
+      <% }) %>
+
+    </div>
+  </div>
+</section>
+
+
     <!-- dusra section -->
     <section id="home" class="hero">
       <div class="hero-grid">
@@ -346,7 +417,7 @@
         WhatsApp
       </a>
 
-      <a href="tel:+919876543210" class="mobile-call">
+      <a href="tel:+918732929431" class="mobile-call">
         <i data-lucide="phone"></i>
         Call Now
       </a>
