@@ -48,9 +48,10 @@
           <a href="/aesthetic" class="pill-switch to-aesthetic"
             >✨ Switch to Aesthetic</a
           >
-          <button class="btn-book dental">
-            <i data-lucide="calendar"></i> Book Appointment
-          </button>
+          <a href="/appointment" class="btn-book dental">
+  <i data-lucide="calendar"></i>
+  Book Appointment
+</a>
         </nav>
         <button class="nav-toggle" aria-label="Menu" data-menu-toggle>
           <i data-lucide="menu"></i>
@@ -327,6 +328,277 @@ review: "My implant consultation with Dr. Nikunj Gupta was highly informative an
       </div>
     </section>
 
+    <section class="map-section">
+  <div class="container">
+
+    <div class="section-head">
+      <h2>Visit Our Clinic</h2>
+      <p>Find us easily on Google Maps</p>
+    </div>
+
+   <div class="map-wrapper">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8217535.777642603!2d70.106014581908!3d21.411245025201076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e87c412a35455%3A0x7174eb62bd28475c!2sShanti%20Dental%20and%20Aesthetic%20clinic!5e0!3m2!1sen!2sin!4v1781775410206!5m2!1sen!2sin"
+    width="100%"
+    height="500"
+    style="border:0;"
+    allowfullscreen
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+  </div>
+</section>
+
+   <section class="appointment-section">
+
+  <div class="appointment-container">
+    
+<div class="appointment-header">
+  <h2 class="appointment-title">
+    Book Your Appointment
+  </h2>
+
+  <p class="appointment-subtitle">
+    Schedule your consultation with our specialists in just a few clicks.
+  </p>
+</div>
+
+<form id="appointmentForm" class="form-grid">
+
+  <!-- Patient Name -->
+
+  <div class="form-group">
+    <label>Full Name</label>
+
+    <input
+      type="text"
+      id="name"
+      placeholder="Enter your full name"
+      required
+    >
+  </div>
+
+  <!-- Mobile Number -->
+
+  <div class="form-group">
+    <label>Mobile Number</label>
+
+    <input
+      type="tel"
+      id="mobile"
+      placeholder="Enter mobile number"
+      required
+    >
+  </div>
+
+  <!-- Age -->
+
+  <div class="form-group">
+    <label>Age</label>
+
+    <input
+      type="number"
+      id="age"
+      placeholder="Enter age"
+      required
+    >
+  </div>
+
+  <!-- Gender -->
+
+  <div class="form-group">
+    <label>Gender</label>
+
+    <select id="gender" required>
+
+      <option value="">
+        Select Gender
+      </option>
+
+      <option value="Male">
+        Male
+      </option>
+
+      <option value="Female">
+        Female
+      </option>
+
+      <option value="Other">
+        Other
+      </option>
+
+    </select>
+  </div>
+
+  <!-- Department -->
+
+  <div class="form-group">
+    <label>Clinic Department</label>
+
+    <select id="department" required>
+
+      <option value="">
+        Select Department
+      </option>
+
+      <option value="Dental">
+        🦷 Dental Clinic
+      </option>
+
+      <option value="Aesthetic">
+        ✨ Aesthetic Clinic
+      </option>
+
+    </select>
+  </div>
+
+  <!-- Service -->
+
+  <div class="form-group">
+    <label>Service</label>
+
+    <select id="service" required>
+
+      <option value="">
+        Select Service
+      </option>
+
+    </select>
+  </div>
+
+  <!-- Date -->
+
+  <div class="form-group">
+    <label>Appointment Date</label>
+
+    <input
+      type="date"
+      id="date"
+      required
+    >
+  </div>
+
+  <!-- Time Slot -->
+
+  <div class="form-group">
+
+    <label>
+      Available Time Slots
+    </label>
+
+    <div class="slot-container">
+
+      <button
+        type="button"
+        class="slot"
+      >
+        10:00 AM
+      </button>
+
+      <button
+        type="button"
+        class="slot"
+      >
+        10:30 AM
+      </button>
+
+      <button
+        type="button"
+        class="slot booked"
+      >
+        11:00 AM
+      </button>
+
+      <button
+        type="button"
+        class="slot"
+      >
+        11:30 AM
+      </button>
+
+      <button
+        type="button"
+        class="slot"
+      >
+        12:00 PM
+      </button>
+
+      <button
+        type="button"
+        class="slot"
+      >
+        12:30 PM
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- Notes -->
+
+  <div class="form-group notes">
+
+    <label>
+      Additional Notes
+    </label>
+
+    <textarea
+      id="notes"
+      rows="5"
+      placeholder="Describe any concerns, symptoms, or special requests..."
+    ></textarea>
+
+  </div>
+
+</form>
+
+<button
+  id="reviewBtn"
+  class="book-btn"
+>
+  Review Appointment
+</button>
+
+  </div>
+
+</section>
+
+<!-- REVIEW MODAL -->
+
+<div
+  id="reviewModal"
+  class="modal"
+>
+
+  <div class="modal-content">
+
+<button
+  id="closeModal"
+  class="close-modal"
+>
+  ✕
+</button>
+
+<h2>
+  Appointment Summary
+</h2>
+
+<div id="summaryContent"></div>
+
+<button
+  id="finalBookBtn"
+  class="book-btn"
+>
+  Book Appointment
+</button>
+
+  </div>
+
+</div>
+
+
     <footer class="site-footer">
       <div class="footer-grid">
         <div>
@@ -374,10 +646,10 @@ review: "My implant consultation with Dr. Nikunj Gupta was highly informative an
         <div>
           <h4>Contact</h4>
           <ul>
-            <li><i data-lucide="phone"></i> +91 98765 43210</li>
+            <li><i data-lucide="phone"></i> +91 87329 29431</li>
             <li><i data-lucide="mail"></i> care@shanticlinic.com</li>
             <li>
-              <i data-lucide="map-pin"></i> 12, Wellness Avenue, Mumbai 400001
+              <i data-lucide="map-pin"></i> 1st floor, Avadh Pride, 143, Nirant Cross Rd, opp. Metro pillar no. 139, Vastral, Ahmedabad, Gujarat 382418
             </li>
           </ul>
         </div>
@@ -393,7 +665,7 @@ review: "My implant consultation with Dr. Nikunj Gupta was highly informative an
     <!-- Floating Contact Buttons -->
     <div class="floating-contact">
       <a
-        href="https://wa.me/919876543210"
+        href="https://wa.me/8732929431"
         target="_blank"
         class="contact-btn whatsapp-btn"
         aria-label="WhatsApp"
@@ -402,7 +674,7 @@ review: "My implant consultation with Dr. Nikunj Gupta was highly informative an
       </a>
 
       <a
-        href="tel:+919876543210"
+        href="tel:+918732929431"
         class="contact-btn call-btn"
         aria-label="Call"
       >
@@ -412,12 +684,12 @@ review: "My implant consultation with Dr. Nikunj Gupta was highly informative an
 
     <!-- Mobile Sticky Contact Bar -->
     <div class="mobile-contact-bar">
-      <a href="https://wa.me/919876543210" target="_blank" class="mobile-wa">
+      <a href="https://wa.me/8732929431" target="_blank" class="mobile-wa">
         <i data-lucide="message-circle"></i>
         WhatsApp
       </a>
 
-      <a href="tel:+918732929431" class="mobile-call">
+      <a href="tel:+91 8732929431" class="mobile-call">
         <i data-lucide="phone"></i>
         Call Now
       </a>
