@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Shanti Dental Clinic</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+    <div class="switch-banner dental">
+      Looking for skin, hair or aesthetic care?
+      <a href="/aesthetic">✨ Switch to Shanti Aesthetic Clinic →</a>
+    </div>
+
+    <header class="site-nav dental">
+      <div class="nav-inner">
+        <a href="/dental" class="brand dental">
+  <img src="/images/Transparent Logo.png" alt="Shanti Dental Clinic" class="logo">
+  <span>Shanti Dental Clinic</span>
+</a>
+        <nav class="nav-links">
+          <a href="/dental">Home</a>
+          <div class="services-dropdown-wrapper">
+            <a href="#" id="servicesBtn"> Services </a>
+
+            <div class="services-dropdown-menu" id="servicesMenu">
+
+  <% services.forEach(service => { %>
+
+    <a href="/services/<%= service.slug %>">
+      <%= service.title %>
+    </a>
+
+  <% }) %>
+
+</div>
+          </div>
+          <a href="#gallery">Gallery</a>
+          <a href="/about">About us</a>
+          <a href="/aesthetic" class="pill-switch to-aesthetic"
+            >✨ Switch to Aesthetic</a
+          >
+          <a href="/appointment" class="btn-book dental">
+  <i data-lucide="calendar"></i>
+  Book Appointment
+</a>
+        </nav>
+        <button class="nav-toggle" aria-label="Menu" data-menu-toggle>
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+      <div class="mobile-menu" data-menu>
+        <a href="/dental">Home</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="aesthetic.html" style="color: var(--aesthetic)"
+          >✨ Switch to Aesthetic</a
+        >
+        <button class="btn-book dental">Book Appointment</button>
+      </div>
+    </header>
+
+    <main class="contact-page">
+
+  <!-- HERO -->
+
+  <section class="contact-hero">
+
+    <div class="container">
+
+      <span class="contact-tag">
+        CONTACT SHANTI CLINIC
+      </span>
+
+      <h1>
+        Let's Start Your
+        Healthcare Journey
+      </h1>
+
+      <p>
+        Have questions about treatment,
+        appointments, pricing or consultation?
+        We're here to help.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT CARDS -->
+
+  <section class="contact-cards-section">
+
+    <div class="container contact-cards">
+
+      <div class="contact-card">
+
+        <div class="contact-icon">
+          📞
+        </div>
+
+        <h3>Call Us</h3>
+
+        <a href="tel:+918732929431">
+          +91 87329 29431
+        </a>
+
+      </div>
+
+      <div class="contact-card">
+
+        <div class="contact-icon">
+          ✉️
+        </div>
+
+        <h3>Email Us</h3>
+
+        <a href="mailto:care@shanticlinic.com">
+          care@shanticlinic.com
+        </a>
+
+      </div>
+
+      <div class="contact-card">
+
+        <div class="contact-icon">
+          📍
+        </div>
+
+        <h3>Visit Us</h3>
+
+        <p>
+          Avadh Pride, Vastral,
+          Ahmedabad
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FORM + DETAILS -->
+
+  <section class="contact-main">
+
+    <div class="container contact-grid">
+
+      <div class="contact-form-card">
+
+        <h2>
+          Send Us A Message
+        </h2>
+
+        <form>
+
+          <input
+            type="text"
+            placeholder="Full Name"
+          >
+
+          <input
+            type="tel"
+            placeholder="Mobile Number"
+          >
+
+          <input
+            type="email"
+            placeholder="Email Address"
+          >
+
+          <select>
+
+            <option>
+              Select Department
+            </option>
+
+            <option>
+              Dental Clinic
+            </option>
+
+            <option>
+              Aesthetic Clinic
+            </option>
+
+          </select>
+
+          <textarea
+            rows="6"
+            placeholder="Your Message"
+          ></textarea>
+
+          <button
+            type="submit"
+            class="btn-big-dental"
+          >
+            Send Message
+          </button>
+
+        </form>
+
+      </div>
+
+      <div class="clinic-details-card">
+
+        <h2>
+          Clinic Information
+        </h2>
+
+        <div class="detail-item">
+
+          <h4>
+            Address
+          </h4>
+
+          <p>
+            1st Floor, Avadh Pride,
+            Opp. Metro Pillar No.139,
+            Vastral, Ahmedabad,
+            Gujarat 382418
+          </p>
+
+        </div>
+
+        <div class="detail-item">
+
+          <h4>
+            Working Hours
+          </h4>
+
+          <p>
+            Monday - Saturday
+            <br>
+            10:00 AM - 8:00 PM
+          </p>
+
+        </div>
+
+        <div class="detail-item">
+
+          <h4>
+            Contact
+          </h4>
+
+          <p>
+            +91 87329 29431
+            <br>
+            care@shanticlinic.com
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- MAP -->
+
+  <section class="contact-map">
+
+    <div class="container">
+
+      <h2>
+        Find Us On Map
+      </h2>
+
+      <div class="map-card">
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8217535.777642603!2d70.106014581908!3d21.411245025201076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e87c412a35455%3A0x7174eb62bd28475c!2sShanti%20Dental%20and%20Aesthetic%20clinic!5e0!3m2!1sen!2sin!4v1781775410206!5m2!1sen!2sin"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FAQ -->
+
+  <section class="contact-faq">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <span class="kicker dental">
+          FAQ
+        </span>
+
+        <h2 class="dental">
+          Frequently Asked Questions
+        </h2>
+
+      </div>
+
+      <div class="faq-grid">
+
+        <div class="faq-card">
+          <h4>
+            Do I need an appointment?
+          </h4>
+
+          <p>
+            Appointments are recommended
+            for faster service.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <h4>
+            Is parking available?
+          </h4>
+
+          <p>
+            Yes, parking is available nearby.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <h4>
+            Do you offer aesthetic treatments?
+          </h4>
+
+          <p>
+            Yes, we provide skin, hair and
+            aesthetic procedures.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="contact-cta">
+
+    <div class="container">
+
+      <h2>
+        Ready To Book Your Visit?
+      </h2>
+
+      <p>
+        Schedule your consultation today.
+      </p>
+
+      <a
+        href="/appointment"
+        class="btn-big-dental"
+      >
+        Book Appointment
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <h3>Shanti Clinic Group</h3>
+          <p>
+            A unified destination for dental excellence and aesthetic refinement
+            — built on clinical precision, modern technology, and personal care.
+          </p>
+        </div>
+        <div>
+          <h4>Dental</h4>
+          <ul class="footer-services">
+            <li>
+              <a href="aligners.html">Aligners</a>
+            </li>
+
+            <li>
+              <a href="braces.html">Braces</a>
+            </li>
+
+            <li>
+              <a href="implants.html">Dental Implants & Dentures</a>
+            </li>
+
+            <li>
+              <a href="pediatric.html"
+                >Paediatric (Child) & Habit Converting Dentistry</a
+              >
+            </li>
+          </ul>
+          <a class="footer-link dental" href="dental.html">Visit Dental →</a>
+        </div>
+        <div>
+          <h4>Aesthetic</h4>
+          <ul>
+            <li>Skin Rejuvenation</li>
+            <li>Anti-Aging Solutions</li>
+            <li>Laser & Hair Therapies</li>
+            <li>Body Contouring</li>
+          </ul>
+          <a class="footer-link aesthetic" href="aesthetic.html"
+            >Visit Aesthetic →</a
+          >
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><i data-lucide="phone"></i> +91 87329 29431</li>
+            <li><i data-lucide="mail"></i> care@shanticlinic.com</li>
+            <li>
+              <i data-lucide="map-pin"></i> 1st floor, Avadh Pride, 143, Nirant Cross Rd, opp. Metro pillar no. 139, Vastral, Ahmedabad, Gujarat 382418
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <p>© 2026 Shanti Clinic Group. All rights reserved.</p>
+          <p>Crafted with care · Privacy · Terms</p>
+        </div>
+      </div>
+    </footer>
+
+     <!-- Floating Contact Buttons -->
+    <div class="floating-contact">
+      <a
+        href="https://wa.me/8732929431"
+        target="_blank"
+        class="contact-btn whatsapp-btn"
+        aria-label="WhatsApp"
+      >
+        <i data-lucide="message-circle"></i>
+      </a>
+
+      <a
+        href="tel:+918732929431"
+        class="contact-btn call-btn"
+        aria-label="Call"
+      >
+        <i data-lucide="phone"></i>
+      </a>
+    </div>
+
+    <!-- Mobile Sticky Contact Bar -->
+    <div class="mobile-contact-bar">
+      <a href="https://wa.me/8732929431" target="_blank" class="mobile-wa">
+        <i data-lucide="message-circle"></i>
+        WhatsApp
+      </a>
+
+      <a href="tel:+91 8732929431" class="mobile-call">
+        <i data-lucide="phone"></i>
+        Call Now
+      </a>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

@@ -22,7 +22,7 @@ const appointmentSchema = new mongoose.Schema(
 
     department: {
       type: String,
-      enum: ["Skin", "Dental"],
+      enum: ["Aesthetic", "Dental"],
       required: true,
     },
 

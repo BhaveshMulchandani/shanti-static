@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Shanti Dental Clinic</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+    <div class="switch-banner dental">
+      Looking for skin, hair or aesthetic care?
+      <a href="/aesthetic">✨ Switch to Shanti Aesthetic Clinic →</a>
+    </div>
+
+    <header class="site-nav dental">
+      <div class="nav-inner">
+        <a href="/dental" class="brand dental">
+  <img src="/images/Transparent Logo.png" alt="Shanti Dental Clinic" class="logo">
+  <span>Shanti Dental Clinic</span>
+</a>
+        <nav class="nav-links">
+          <a href="/dental">Home</a>
+          <div class="services-dropdown-wrapper">
+            <a href="#" id="servicesBtn"> Services </a>
+
+            <div class="services-dropdown-menu" id="servicesMenu">
+
+  <% services.forEach(service => { %>
+
+    <a href="/services/<%= service.slug %>">
+      <%= service.title %>
+    </a>
+
+  <% }) %>
+
+</div>
+          </div>
+          <a href="#gallery">Gallery</a>
+          <a href="/about">About us</a>
+        <a href="/contactus">Contact Us</a>
+          <a href="/aesthetic" class="pill-switch to-aesthetic"
+            >✨ Switch to Aesthetic</a
+          >
+          <a href="/appointment" class="btn-book dental">
+  <i data-lucide="calendar"></i>
+  Book Appointment
+</a>
+        </nav>
+        <button class="nav-toggle" aria-label="Menu" data-menu-toggle>
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+      <div class="mobile-menu" data-menu>
+        <a href="/dental">Home</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="aesthetic.html" style="color: var(--aesthetic)"
+          >✨ Switch to Aesthetic</a
+        >
+        <button class="btn-book dental">Book Appointment</button>
+      </div>
+    </header>
+
+    <main class="about-page">
+
+  <!-- HERO -->
+
+  <section class="about-hero">
+
+    <div class="container about-hero-grid">
+
+      <div>
+
+        <span class="about-tag">
+          ABOUT SHANTI CLINIC
+        </span>
+
+        <h1>
+          Compassionate Care,
+          Modern Technology &
+          Beautiful Results.
+        </h1>
+
+        <p>
+          At Shanti Dental & Aesthetic Clinic,
+          we combine advanced treatment,
+          patient comfort and ethical healthcare
+          to create confident smiles and healthier lives.
+        </p>
+
+        <div class="about-actions">
+
+          <a
+            href="/appointment"
+            class="btn-big-dental"
+          >
+            Book Appointment
+          </a>
+
+          <a
+            href="tel:+918732929431"
+            class="btn-outline dental"
+          >
+            Call Now
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="about-image">
+
+        <img
+          src="/images/clinic-team.jpg"
+          alt="Shanti Clinic"
+        >
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STORY -->
+
+  <section class="about-story">
+
+    <div class="container story-grid">
+
+      <div>
+        <img
+          src="/images/clinic-interior.jpg"
+          alt="Clinic"
+        >
+      </div>
+
+      <div>
+
+        <span class="section-mini">
+          OUR STORY
+        </span>
+
+        <h2>
+          Healthcare Designed Around People.
+        </h2>
+
+        <p>
+          Shanti Dental & Aesthetic Clinic was
+          established with a simple vision —
+          provide modern, ethical and affordable
+          healthcare under one roof.
+        </p>
+
+        <p>
+          From routine dental care to advanced
+          smile makeovers and aesthetic treatments,
+          every treatment plan is personalized to
+          the unique needs of each patient.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- WHY US -->
+
+  <section class="why-section">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <span class="kicker dental">
+          WHY CHOOSE US
+        </span>
+
+        <h2 class="dental">
+          Experience Healthcare Differently
+        </h2>
+
+      </div>
+
+      <div class="why-grid">
+
+        <div class="why-card">
+          <h3>Advanced Technology</h3>
+          <p>
+            Digital diagnosis and modern equipment
+            for precise treatments.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <h3>Experienced Doctors</h3>
+          <p>
+            Skilled specialists focused on
+            delivering excellent outcomes.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <h3>Patient First</h3>
+          <p>
+            Transparent consultations and
+            comfortable treatment experience.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <h3>Complete Care</h3>
+          <p>
+            Dental and aesthetic solutions
+            available under one roof.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STATS -->
+
+  <section class="about-stats">
+
+    <div class="container stats-grid">
+
+      <div>
+        <h3>2500+</h3>
+        <p>Happy Patients</p>
+      </div>
+
+      <div>
+        <h3>5000+</h3>
+        <p>Treatments Completed</p>
+      </div>
+
+      <div>
+        <h3>5★</h3>
+        <p>Patient Rating</p>
+      </div>
+
+      <div>
+        <h3>10+</h3>
+        <p>Years Experience</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- DOCTORS -->
+
+  <section class="doctors-section">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <span class="kicker dental">
+          OUR DOCTORS
+        </span>
+
+        <h2 class="dental">
+          Meet Our Specialists
+        </h2>
+
+      </div>
+
+      <div class="doctor-grid">
+
+        <div class="doctor-card">
+
+          <img
+            src="/images/dr-nikunj.jpg"
+            alt="Dr Nikunj"
+          >
+
+          <h3>
+            Dr. Nikunj Gupta
+          </h3>
+
+          <p>
+            Oral & Maxillofacial Surgeon
+          </p>
+
+        </div>
+
+        <div class="doctor-card">
+
+          <img
+            src="/images/dr-hinal.jpg"
+            alt="Dr Hinal"
+          >
+
+          <h3>
+            Dr. Hinal
+          </h3>
+
+          <p>
+            Root Canal Specialist
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- MISSION -->
+
+  <section class="mission-section">
+
+    <div class="container mission-grid">
+
+      <div class="mission-card">
+
+        <h3>Our Mission</h3>
+
+        <p>
+          To provide ethical,
+          affordable and advanced healthcare
+          that improves confidence,
+          well-being and quality of life.
+        </p>
+
+      </div>
+
+      <div class="mission-card">
+
+        <h3>Our Vision</h3>
+
+        <p>
+          To become Ahmedabad's most trusted
+          destination for dental and
+          aesthetic excellence.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="about-cta">
+
+    <div class="container">
+
+      <h2>
+        Ready To Transform Your Smile?
+      </h2>
+
+      <p>
+        Schedule your consultation today.
+      </p>
+
+      <a
+        href="/appointment"
+        class="btn-big-dental"
+      >
+        Book Appointment
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <h3>Shanti Clinic Group</h3>
+          <p>
+            A unified destination for dental excellence and aesthetic refinement
+            — built on clinical precision, modern technology, and personal care.
+          </p>
+        </div>
+        <div>
+          <h4>Dental</h4>
+          <ul class="footer-services">
+            <li>
+              <a href="aligners.html">Aligners</a>
+            </li>
+
+            <li>
+              <a href="braces.html">Braces</a>
+            </li>
+
+            <li>
+              <a href="implants.html">Dental Implants & Dentures</a>
+            </li>
+
+            <li>
+              <a href="pediatric.html"
+                >Paediatric (Child) & Habit Converting Dentistry</a
+              >
+            </li>
+          </ul>
+          <a class="footer-link dental" href="dental.html">Visit Dental →</a>
+        </div>
+        <div>
+          <h4>Aesthetic</h4>
+          <ul>
+            <li>Skin Rejuvenation</li>
+            <li>Anti-Aging Solutions</li>
+            <li>Laser & Hair Therapies</li>
+            <li>Body Contouring</li>
+          </ul>
+          <a class="footer-link aesthetic" href="aesthetic.html"
+            >Visit Aesthetic →</a
+          >
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><i data-lucide="phone"></i> +91 87329 29431</li>
+            <li><i data-lucide="mail"></i> care@shanticlinic.com</li>
+            <li>
+              <i data-lucide="map-pin"></i> 1st floor, Avadh Pride, 143, Nirant Cross Rd, opp. Metro pillar no. 139, Vastral, Ahmedabad, Gujarat 382418
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <p>© 2026 Shanti Clinic Group. All rights reserved.</p>
+          <p>Crafted with care · Privacy · Terms</p>
+        </div>
+      </div>
+    </footer>
+
+     <!-- Floating Contact Buttons -->
+    <div class="floating-contact">
+      <a
+        href="https://wa.me/8732929431"
+        target="_blank"
+        class="contact-btn whatsapp-btn"
+        aria-label="WhatsApp"
+      >
+        <i data-lucide="message-circle"></i>
+      </a>
+
+      <a
+        href="tel:+918732929431"
+        class="contact-btn call-btn"
+        aria-label="Call"
+      >
+        <i data-lucide="phone"></i>
+      </a>
+    </div>
+
+    <!-- Mobile Sticky Contact Bar -->
+    <div class="mobile-contact-bar">
+      <a href="https://wa.me/8732929431" target="_blank" class="mobile-wa">
+        <i data-lucide="message-circle"></i>
+        WhatsApp
+      </a>
+
+      <a href="tel:+91 8732929431" class="mobile-call">
+        <i data-lucide="phone"></i>
+        Call Now
+      </a>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

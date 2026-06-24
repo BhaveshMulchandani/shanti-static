@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#F9F1E8;
+    display:flex;
+    min-height:100vh;
+}
+
+/* Sidebar */
+
+.sidebar{
+
+    width:260px;
+
+    background:#0065A7;
+
+    color:white;
+
+    padding:30px 20px;
+}
+
+.logo{
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    margin-bottom:40px;
+
+    text-align:center;
+}
+
+.nav-links{
+
+    list-style:none;
+}
+
+.nav-links li{
+    margin-bottom:12px;
+}
+
+.nav-links a{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:14px 16px;
+
+    border-radius:12px;
+
+    transition:.3s;
+}
+
+.nav-links a:hover{
+
+    background:rgba(255,255,255,.15);
+}
+
+/* Main */
+
+.main{
+
+    flex:1;
+
+    padding:40px;
+}
+
+.page-title{
+
+    color:#0065A7;
+
+    margin-bottom:30px;
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+}
+
+.card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:
+    0 10px 30px
+    rgba(0,101,167,.1);
+
+    transition:.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-4px);
+}
+
+.card h3{
+
+    color:#0065A7;
+
+    margin-bottom:10px;
+}
+
+.card p{
+
+    color:#666;
+}
+
+.quick-links{
+
+    margin-top:40px;
+}
+
+.quick-links h2{
+
+    color:#0065A7;
+
+    margin-bottom:20px;
+}
+
+.buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+.buttons a{
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:14px 22px;
+
+    border-radius:12px;
+
+    background:
+    linear-gradient(
+      135deg,
+      #59CAEB,
+      #0065A7
+    );
+}
+
+@media(max-width:768px){
+
+    body{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+    }
+
+    .main{
+        padding:20px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+    <div class="logo">
+        Shanti Admin
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="/admin/dashboard">
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="/admin/services">
+                Services
+            </a>
+        </li>
+
+        <li>
+            <a href="/admin/appointments">
+                Appointments
+            </a>
+        </li>
+
+        <li>
+            <a href="/admin/blogs">
+                Blogs
+            </a>
+        </li>
+
+        <li>
+            <a href="/admin/logout">
+                Logout
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+    <h1 class="page-title">
+        Admin Dashboard
+    </h1>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Services</h3>
+            <p>
+                Manage clinic services.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Appointments</h3>
+            <p>
+                View patient bookings.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Blogs</h3>
+            <p>
+                Create and manage blogs.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="quick-links">
+
+        <h2>
+            Quick Actions
+        </h2>
+
+        <div class="buttons">
+
+            <a href="/admin/services/create">
+                + Create Service
+            </a>
+
+            <a href="/admin/blogs/create">
+                + Create Blog
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

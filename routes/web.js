@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-
 const Service = require("../models/Service");
 const webController = require("../controllers/web.controller");
 
@@ -13,6 +12,16 @@ router.get("/booking", (req, res) => {
 router.get("/booking-success", (req, res) => {
   res.render("booking-success");
 });
+
+router.get(
+  "/about",
+  webController.renderAboutPage
+);
+
+router.get(
+  "/contactus",
+  webController.renderContactPage
+);
 
 router.get("/services/:slug", async (req, res) => {
   try {

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Appointments</title>
+
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css"
+/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    display:flex;
+    min-height:100vh;
+    background:#F9F1E8;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+
+    width:260px;
+
+    background:#0065A7;
+
+    color:white;
+
+    padding:30px 20px;
+}
+
+.logo{
+
+    text-align:center;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    margin-bottom:40px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    margin-bottom:12px;
+}
+
+.sidebar a{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    transition:.3s;
+}
+
+.sidebar a:hover{
+
+    background:
+    rgba(255,255,255,.15);
+}
+
+/* MAIN */
+
+.main{
+
+    flex:1;
+
+    padding:30px;
+}
+
+.page-title{
+
+    color:#0065A7;
+
+    margin-bottom:25px;
+}
+
+/* CALENDAR */
+
+.calendar-wrapper{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:25px;
+
+    box-shadow:
+    0 15px 40px
+    rgba(0,101,167,.12);
+}
+
+.fc-toolbar-title{
+
+    color:#0065A7 !important;
+
+    font-size:1.6rem !important;
+}
+
+.fc-button{
+
+    background:#0065A7 !important;
+
+    border:none !important;
+}
+
+.fc-event{
+
+    background:#59CAEB !important;
+
+    border:none !important;
+
+    padding:4px;
+
+    cursor:pointer;
+}
+
+/* MODAL */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.45);
+
+    backdrop-filter:blur(5px);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+}
+
+.modal-content{
+
+    width:90%;
+
+    max-width:650px;
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:30px;
+
+    box-shadow:
+    0 20px 50px
+    rgba(0,0,0,.15);
+}
+
+.close{
+
+    float:right;
+
+    cursor:pointer;
+
+    font-size:26px;
+
+    font-weight:bold;
+}
+
+.modal-content h2{
+
+    color:#0065A7;
+
+    margin-bottom:20px;
+}
+
+#appointmentDetails{
+
+    display:grid;
+
+    gap:12px;
+}
+
+#appointmentDetails p{
+
+    padding:12px;
+
+    border-radius:10px;
+
+    background:#F9F1E8;
+}
+
+.actions{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:25px;
+}
+
+.actions button{
+
+    flex:1;
+
+    border:none;
+
+    color:white;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-weight:600;
+}
+
+.remind-btn{
+
+    background:#59CAEB;
+}
+
+.visit-btn{
+
+    background:#0065A7;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    body{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+    }
+
+    .main{
+        padding:15px;
+    }
+
+    .actions{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    <div class="logo">
+        Shanti Admin
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="/admin/dashboard">
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="/admin/services">
+                Services
+            </a>
+        </li>
+
+        <li>
+            <a href="/admin/appointments">
+                Appointments
+            </a>
+        </li>
+
+        <li>
+            <a href="/admin/blogs">
+                Blogs
+            </a>
+        </li>
+
+        <li>
+            <a href="/admin/logout">
+                Logout
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+    <h1 class="page-title">
+        Appointment Calendar
+    </h1>
+
+    <div class="calendar-wrapper">
+
+        <div id="calendar"></div>
+
+    </div>
+
+</div>
+
+<!-- MODAL -->
+
+<div
+id="appointmentModal"
+class="modal">
+
+    <div class="modal-content">
+
+        <span
+        class="close"
+        id="closeModal">
+            ×
+        </span>
+
+        <h2>
+            Patient Details
+        </h2>
+
+        <div
+        id="appointmentDetails">
+        </div>
+
+        <div class="actions">
+
+            <button
+            class="remind-btn"
+            id="markReminded">
+                Mark Reminded
+            </button>
+
+            <button
+            class="visit-btn"
+            id="markVisited">
+                Mark Visited
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+
+<script>
+
+const appointments =
+<%- JSON.stringify(appointments || []) %>;
+
+let currentAppointmentId =
+null;
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+    const calendarEl =
+    document.getElementById(
+      "calendar"
+    );
+
+    const calendar =
+    new FullCalendar.Calendar(
+      calendarEl,
+      {
+
+        initialView:
+        "dayGridMonth",
+
+        height:"auto",
+
+        events:
+        appointments.map(
+          item => ({
+
+            id:item._id,
+
+            title:
+            `${item.patientName}
+             (${item.slot})`,
+
+            start:
+            item.appointmentDate,
+
+            extendedProps:item
+
+          })
+        ),
+
+        eventClick:
+        function(info){
+
+            const data =
+            info.event.extendedProps;
+
+            currentAppointmentId =
+            data._id;
+
+            document
+            .getElementById(
+              "appointmentDetails"
+            ).innerHTML = `
+
+              <p><strong>Name:</strong>
+              ${data.patientName}</p>
+
+              <p><strong>Mobile:</strong>
+              ${data.mobileNumber}</p>
+
+              <p><strong>Age:</strong>
+              ${data.age}</p>
+
+              <p><strong>Gender:</strong>
+              ${data.gender}</p>
+
+              <p><strong>Department:</strong>
+              ${data.department}</p>
+
+              <p><strong>Service:</strong>
+              ${data.service}</p>
+
+              <p><strong>Time:</strong>
+              ${data.slot}</p>
+
+              <p><strong>Notes:</strong>
+              ${data.notes || "N/A"}</p>
+
+              <p><strong>Reminder:</strong>
+              ${data.reminderStatus}</p>
+
+              <p><strong>Visit:</strong>
+              ${data.visitStatus}</p>
+            `;
+
+            document
+            .getElementById(
+              "appointmentModal"
+            )
+            .style.display =
+            "flex";
+        }
+      }
+    );
+
+    calendar.render();
+
+});
+
+document
+.getElementById(
+"closeModal"
+)
+.addEventListener(
+"click",
+() => {
+
+document
+.getElementById(
+"appointmentModal"
+)
+.style.display =
+"none";
+
+}
+);
+
+document
+.getElementById(
+"markReminded"
+)
+.addEventListener(
+"click",
+() => {
+
+alert(
+`Reminder sent for Appointment ID:
+${currentAppointmentId}`
+);
+
+}
+);
+
+document
+.getElementById(
+"markVisited"
+)
+.addEventListener(
+"click",
+() => {
+
+alert(
+`Marked visited:
+${currentAppointmentId}`
+);
+
+}
+);
+
+</script>
+
+</body>
+</html>

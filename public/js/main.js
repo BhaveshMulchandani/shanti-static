@@ -286,35 +286,108 @@ if (
 // Final Booking
 
 finalBookBtn.addEventListener(
-"click",
-() => {
+  "click",
+  async () => {
 
-reviewModal.style.display =
-  "none";
+    alert("button clicked")
+    try {
 
-alert(
-  "Appointment booked successfully 🎉"
-);
+      const payload = {
 
-document
-  .getElementById(
-    "appointmentForm"
-  )
-  .reset();
+        patientName:
+        document.getElementById(
+          "name"
+        ).value,
 
-selectedSlot = "";
+        mobileNumber:
+        document.getElementById(
+          "mobile"
+        ).value,
 
-document
-  .querySelectorAll(".slot")
-  .forEach(btn =>
-    btn.classList.remove(
-      "active"
-    )
-  );
+        age:
+        document.getElementById(
+          "age"
+        ).value,
 
-service.innerHTML =
-  '<option value="">Select Service</option>';
+        gender:
+        document.getElementById(
+          "gender"
+        ).value,
 
-}
+        department:
+        document.getElementById(
+          "department"
+        ).value,
+
+        service:
+        document.getElementById(
+          "service"
+        ).value,
+
+        appointmentDate:
+        document.getElementById(
+          "date"
+        ).value,
+
+        slot:selectedSlot,
+
+        notes:
+        document.getElementById(
+          "notes"
+        ).value
+
+      };
+
+      const response =
+      await fetch(
+        "/appointment/create",
+        {
+          method:"POST",
+
+          headers:{
+            "Content-Type":
+            "application/json"
+          },
+
+          body:
+          JSON.stringify(
+            payload
+          )
+        }
+      );
+
+      const data =
+      await response.json();
+
+      if(!response.ok){
+
+        return alert(
+          data.message
+        );
+      }
+
+      alert(
+        "Appointment booked successfully 🎉"
+      );
+
+      reviewModal.style.display =
+      "none";
+
+      document
+      .getElementById(
+        "appointmentForm"
+      )
+      .reset();
+
+    } catch(error){
+
+      console.error(error);
+
+      alert(
+        "Something went wrong."
+      );
+    }
+
+  }
 );
 

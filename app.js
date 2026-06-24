@@ -4,6 +4,7 @@ const adminRoutes = require("./routes/admin");
 require("dotenv").config()
 const connectdb = require("./config/db")
 const webRoutes = require("./routes/web");
+const cookieParser = require("cookie-parser");
 
 
 
@@ -11,8 +12,10 @@ const webRoutes = require("./routes/web");
 connectdb()
 
 // Form data read karne ke liye
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.use(cookieParser());
 
 // EJS set karna padega
 app.set("view engine", "ejs");
