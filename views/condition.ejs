@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Shanti Dental Clinic</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+
+    <div class="switch-banner dental">
+        Looking for skin, hair or aesthetic care?
+        <a href="/aesthetic">✨ Switch to Shanti Aesthetic Clinic →</a>
+    </div>
+
+    <header class="site-nav dental">
+        <div class="nav-inner">
+            <a href="/dental" class="brand dental">
+                <img src="/images/Transparent Logo.png" alt="Shanti Dental Clinic" class="logo">
+                <span>Shanti Dental Clinic</span>
+            </a>
+            <nav class="nav-links">
+                <a href="/dental">Home</a>
+                <div class="services-dropdown-wrapper">
+                    <a href="#" id="servicesBtn"> Services </a>
+
+                    <div class="services-dropdown-menu" id="servicesMenu">
+
+                        <% services.forEach(service=> { %>
+
+                            <a href="/services/<%= service.slug %>">
+                                <%= service.title %>
+                            </a>
+
+                            <% }) %>
+
+                    </div>
+                </div>
+
+<div class="services-dropdown-wrapper">
+    <a href="#">Conditions</a>
+
+    <div class="services-dropdown-menu">
+
+        <% conditions.forEach(condition => { %>
+
+            <a href="/conditions/<%= condition.slug %>">
+                <%= condition.title %>
+            </a>
+
+        <% }) %>
+
+    </div>
+</div>
+                <a href="/gallery">Gallery</a>
+                <a href="/about">About us</a>
+                <a href="/contactus">Contact Us</a>
+                <a href="/blog">Blogs</a>
+                <a href="/aesthetic" class="pill-switch to-aesthetic">✨ Switch to Aesthetic</a>
+                <a href="/appointment" class="btn-book dental">
+                    <i data-lucide="calendar"></i>
+                    Book Appointment
+                </a>
+            </nav>
+            <button class="nav-toggle" aria-label="Menu" data-menu-toggle>
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <div class="mobile-menu" data-menu>
+            <a href="/dental">Home</a>
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="aesthetic.html" style="color: var(--aesthetic)">✨ Switch to Aesthetic</a>
+            <button class="btn-book dental">Book Appointment</button>
+        </div>
+    </header>
+
+    <main class="condition-page">
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <a href="/dental">Home</a>
+            <span>/</span>
+
+            <a href="#">Conditions</a>
+
+            <span>/</span>
+
+            <span><%= condition.title %></span>
+        </div>
+    </section>
+
+    <!-- HERO -->
+
+    <section class="condition-hero">
+
+        <div class="container hero-grid">
+
+            <div class="hero-content">
+
+                <span class="hero-badge">
+
+                    Dental Condition
+
+                </span>
+
+                <h1>
+
+                    <%= condition.title %>
+
+                </h1>
+
+                <p>
+
+                    <%= condition.excerpt %>
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="/appointment" class="btn-book dental">
+
+                        Book Appointment
+
+                    </a>
+
+                    <a href="tel:+918732929431" class="btn-outline">
+
+                        Call Now
+
+                    </a>
+
+                </div>
+
+                <div class="hero-points">
+
+                    <div>
+
+                        <i data-lucide="shield-check"></i>
+
+                        Expert Treatment
+
+                    </div>
+
+                    <div>
+
+                        <i data-lucide="clock-3"></i>
+
+                        Same Day Consultation
+
+                    </div>
+
+                    <div>
+
+                        <i data-lucide="award"></i>
+
+                        Experienced Doctors
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+
+                <img src="<%= condition.image %>" alt="<%= condition.title %>">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Overview -->
+
+    <section class="condition-overview">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span>Overview</span>
+
+                <h2>
+
+                    What is <%= condition.title %>?
+
+                </h2>
+
+            </div>
+
+            <div class="overview-box">
+
+                <%- condition.content %>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Symptoms -->
+
+    <section class="symptoms-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span>Symptoms</span>
+
+                <h2>
+
+                    Common Signs & Symptoms
+
+                </h2>
+
+            </div>
+
+            <div class="symptom-grid">
+
+                <div class="symptom-card">
+
+                    <i data-lucide="circle-alert"></i>
+
+                    <h4>
+
+                        Jaw Pain
+
+                    </h4>
+
+                    <p>
+
+                        Persistent discomfort while chewing or talking.
+
+                    </p>
+
+                </div>
+
+                <div class="symptom-card">
+
+                    <i data-lucide="circle-alert"></i>
+
+                    <h4>
+
+                        Clicking Sound
+
+                    </h4>
+
+                    <p>
+
+                        Clicking or popping while opening your mouth.
+
+                    </p>
+
+                </div>
+
+                <div class="symptom-card">
+
+                    <i data-lucide="circle-alert"></i>
+
+                    <h4>
+
+                        Teeth Grinding
+
+                    </h4>
+
+                    <p>
+
+                        Grinding teeth during sleep or stress.
+
+                    </p>
+
+                </div>
+
+                <div class="symptom-card">
+
+                    <i data-lucide="circle-alert"></i>
+
+                    <h4>
+
+                        Headaches
+
+                    </h4>
+
+                    <p>
+
+                        Frequent headaches around temples.
+
+                    </p>
+
+                </div>
+
+                <div class="symptom-card">
+
+                    <i data-lucide="circle-alert"></i>
+
+                    <h4>
+
+                        Facial Pain
+
+                    </h4>
+
+                    <p>
+
+                        Tenderness around jaw muscles.
+
+                    </p>
+
+                </div>
+
+                <div class="symptom-card">
+
+                    <i data-lucide="circle-alert"></i>
+
+                    <h4>
+
+                        Limited Jaw Movement
+
+                    </h4>
+
+                    <p>
+
+                        Difficulty opening or closing the mouth.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+        <!-- =========================
+         Causes Section
+    ========================== -->
+
+    <section class="causes-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span>Causes</span>
+
+                <h2>What Causes <%= condition.title %>?</h2>
+
+                <p>
+                    Several factors can contribute to this condition. Our specialists identify
+                    the root cause before recommending the best treatment plan.
+                </p>
+
+            </div>
+
+            <div class="cause-grid">
+
+                <div class="cause-card">
+
+                    <div class="cause-icon">
+                        <i data-lucide="brain"></i>
+                    </div>
+
+                    <h3>Stress & Anxiety</h3>
+
+                    <p>
+                        Emotional stress may cause involuntary clenching and teeth grinding.
+                    </p>
+
+                </div>
+
+                <div class="cause-card">
+
+                    <div class="cause-icon">
+                        <i data-lucide="activity"></i>
+                    </div>
+
+                    <h3>Jaw Injury</h3>
+
+                    <p>
+                        Trauma or injury to the jaw can affect normal jaw movement.
+                    </p>
+
+                </div>
+
+                <div class="cause-card">
+
+                    <div class="cause-icon">
+                        <i data-lucide="shield-alert"></i>
+                    </div>
+
+                    <h3>Arthritis</h3>
+
+                    <p>
+                        Joint inflammation can affect the temporomandibular joint.
+                    </p>
+
+                </div>
+
+                <div class="cause-card">
+
+                    <div class="cause-icon">
+                        <i data-lucide="smile"></i>
+                    </div>
+
+                    <h3>Misaligned Bite</h3>
+
+                    <p>
+                        Uneven bite may place excessive pressure on jaw muscles.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         Treatment
+    ========================== -->
+
+    <section class="treatment-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span>Treatment</span>
+
+                <h2>How We Treat This Condition</h2>
+
+            </div>
+
+            <div class="treatment-wrapper">
+
+                <div class="treatment-image">
+
+                    <img src="/images/conditions/treatment.jpg" alt="Treatment">
+
+                </div>
+
+                <div class="treatment-content">
+
+                    <div class="treatment-item">
+
+                        <i data-lucide="check-circle-2"></i>
+
+                        <div>
+
+                            <h4>Comprehensive Examination</h4>
+
+                            <p>
+                                We identify the exact reason behind your condition using
+                                modern diagnostic methods.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="treatment-item">
+
+                        <i data-lucide="check-circle-2"></i>
+
+                        <div>
+
+                            <h4>Customized Treatment Plan</h4>
+
+                            <p>
+                                Every patient receives a treatment plan tailored to their
+                                condition and lifestyle.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="treatment-item">
+
+                        <i data-lucide="check-circle-2"></i>
+
+                        <div>
+
+                            <h4>Advanced Dental Technology</h4>
+
+                            <p>
+                                We use modern equipment for safe, comfortable and
+                                predictable treatment.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="treatment-item">
+
+                        <i data-lucide="check-circle-2"></i>
+
+                        <div>
+
+                            <h4>Regular Follow Up</h4>
+
+                            <p>
+                                Our team monitors your recovery to ensure long-term success.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         Why Choose Us
+    ========================== -->
+
+    <section class="why-us-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span>Why Choose Us</span>
+
+                <h2>Why Patients Trust Shanti Dental Clinic</h2>
+
+            </div>
+
+            <div class="why-grid">
+
+                <div class="why-card">
+
+                    <i data-lucide="stethoscope"></i>
+
+                    <h4>Experienced Dentists</h4>
+
+                    <p>
+                        Personalized care from skilled dental professionals.
+                    </p>
+
+                </div>
+
+                <div class="why-card">
+
+                    <i data-lucide="hospital"></i>
+
+                    <h4>Modern Equipment</h4>
+
+                    <p>
+                        Advanced technology for accurate diagnosis and treatment.
+                    </p>
+
+                </div>
+
+                <div class="why-card">
+
+                    <i data-lucide="shield-check"></i>
+
+                    <h4>Safe Procedures</h4>
+
+                    <p>
+                        Strict sterilization protocols for your safety.
+                    </p>
+
+                </div>
+
+                <div class="why-card">
+
+                    <i data-lucide="heart-handshake"></i>
+
+                    <h4>Patient First Approach</h4>
+
+                    <p>
+                        Compassionate treatment focused on comfort and results.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+        <!-- =========================
+         FAQ
+    ========================== -->
+
+    <section class="faq-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span>FAQ</span>
+
+                <h2>Frequently Asked Questions</h2>
+
+            </div>
+
+            <div class="faq-wrapper">
+
+                <div class="faq-item active">
+
+                    <button class="faq-question">
+
+                        What is <%= condition.title %>?
+
+                        <i data-lucide="plus"></i>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            <%= condition.title %> is a dental condition that can affect your
+                            oral health and overall quality of life. Early diagnosis and
+                            treatment help prevent further complications.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+
+                        Is treatment painful?
+
+                        <i data-lucide="plus"></i>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Most treatments are performed with modern techniques that focus on
+                            patient comfort and minimal discomfort.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+
+                        When should I visit a dentist?
+
+                        <i data-lucide="plus"></i>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            If you notice persistent symptoms, pain, swelling, difficulty
+                            chewing or changes in your bite, schedule an appointment as soon as
+                            possible.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+
+                        Can this condition be prevented?
+
+                        <i data-lucide="plus"></i>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Good oral hygiene, regular dental check-ups and early treatment of
+                            dental problems greatly reduce the risk of complications.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         Related Conditions
+    ========================== -->
+
+    <section class="related-conditions">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span>Explore More</span>
+
+                <h2>Related Dental Conditions</h2>
+
+            </div>
+
+            <div class="condition-grid">
+
+                <% conditions.forEach(item=>{ %>
+
+                <% if(item.slug!==condition.slug){ %>
+
+                <article class="condition-card">
+
+                    <a href="/conditions/<%= item.slug %>">
+
+                        <img src="<%= item.image %>" alt="<%= item.title %>">
+
+                    </a>
+
+                    <div class="condition-card-content">
+
+                        <h3>
+
+                            <a href="/conditions/<%= item.slug %>">
+
+                                <%= item.title %>
+
+                            </a>
+
+                        </h3>
+
+                        <p>
+
+                            <%= item.excerpt %>
+
+                        </p>
+
+                        <a href="/conditions/<%= item.slug %>" class="read-more">
+
+                            Learn More →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <% } %>
+
+                <% }) %>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CTA
+    ========================== -->
+
+    <section class="condition-cta">
+
+        <div class="container">
+
+            <div class="cta-box">
+
+                <div>
+
+                    <span>Need Expert Dental Care?</span>
+
+                    <h2>
+
+                        Book Your Consultation Today
+
+                    </h2>
+
+                    <p>
+
+                        Our experienced dental team is here to provide personalized care
+                        using advanced technology and modern treatment techniques.
+
+                    </p>
+
+                </div>
+
+                <div class="cta-buttons">
+
+                    <a href="/appointment" class="btn-book dental">
+
+                        Book Appointment
+
+                    </a>
+
+                    <a href="tel:+918732929431" class="btn-outline">
+
+                        Call Now
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<script>
+
+document.querySelectorAll(".faq-question").forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+const item=button.parentElement;
+
+item.classList.toggle("active");
+
+});
+
+});
+
+</script>
+
+
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <h3>Shanti Clinic Group</h3>
+                <p>
+                    A unified destination for dental excellence and aesthetic refinement
+                    — built on clinical precision, modern technology, and personal care.
+                </p>
+            </div>
+            <div>
+                <h4>Dental</h4>
+                <ul class="footer-services">
+                    <li>
+                        <a href="aligners.html">Aligners</a>
+                    </li>
+
+                    <li>
+                        <a href="braces.html">Braces</a>
+                    </li>
+
+                    <li>
+                        <a href="implants.html">Dental Implants & Dentures</a>
+                    </li>
+
+                    <li>
+                        <a href="pediatric.html">Paediatric (Child) & Habit Converting Dentistry</a>
+                    </li>
+                </ul>
+                <a class="footer-link dental" href="dental.html">Visit Dental →</a>
+            </div>
+            <div>
+                <h4>Aesthetic</h4>
+                <ul>
+                    <li>Skin Rejuvenation</li>
+                    <li>Anti-Aging Solutions</li>
+                    <li>Laser & Hair Therapies</li>
+                    <li>Body Contouring</li>
+                </ul>
+                <a class="footer-link aesthetic" href="aesthetic.html">Visit Aesthetic →</a>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul>
+                    <li><i data-lucide="phone"></i> +91 87329 29431</li>
+                    <li><i data-lucide="mail"></i> care@shanticlinic.com</li>
+                    <li>
+                        <i data-lucide="map-pin"></i> 1st floor, Avadh Pride, 143, Nirant Cross Rd, opp. Metro pillar
+                        no. 139, Vastral, Ahmedabad, Gujarat 382418
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-inner">
+                <p>© 2026 Shanti Clinic Group. All rights reserved.</p>
+                <p>Crafted with care · Privacy · Terms</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Contact Buttons -->
+    <div class="floating-contact">
+        <a href="https://wa.me/8732929431" target="_blank" class="contact-btn whatsapp-btn" aria-label="WhatsApp">
+            <i data-lucide="message-circle"></i>
+        </a>
+
+        <a href="tel:+918732929431" class="contact-btn call-btn" aria-label="Call">
+            <i data-lucide="phone"></i>
+        </a>
+    </div>
+
+    <!-- Mobile Sticky Contact Bar -->
+    <div class="mobile-contact-bar">
+        <a href="https://wa.me/8732929431" target="_blank" class="mobile-wa">
+            <i data-lucide="message-circle"></i>
+            WhatsApp
+        </a>
+
+        <a href="tel:+91 8732929431" class="mobile-call">
+            <i data-lucide="phone"></i>
+            Call Now
+        </a>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

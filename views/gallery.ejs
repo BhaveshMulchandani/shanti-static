@@ -36,8 +36,26 @@
 
 </div>
           </div>
+
+<div class="services-dropdown-wrapper">
+    <a href="#">Conditions</a>
+
+    <div class="services-dropdown-menu">
+
+        <% conditions.forEach(condition => { %>
+
+            <a href="/conditions/<%= condition.slug %>">
+                <%= condition.title %>
+            </a>
+
+        <% }) %>
+
+    </div>
+</div>
           <a href="#gallery">Gallery</a>
           <a href="/about">About us</a>
+          <a href="/contactus">Contact Us</a>
+          <a href="/blog">Blogs</a>
           <a href="/aesthetic" class="pill-switch to-aesthetic"
             >✨ Switch to Aesthetic</a
           >
@@ -60,6 +78,93 @@
         <button class="btn-book dental">Book Appointment</button>
       </div>
     </header>
+
+    <!-- Hero Banner -->
+<section class="page-banner">
+  <div class="container">
+    <h1>Gallery</h1>
+    <p>Explore our clinic, advanced technology, treatment journey and patient experiences.</p>
+  </div>
+</section>
+
+<!-- Gallery Filters -->
+<section class="gallery-section">
+  <div class="container">
+
+    <div class="gallery-filter">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="clinic">Clinic</button>
+      <button data-filter="dental">Dental</button>
+      <button data-filter="patients">Patients</button>
+      <button data-filter="technology">Technology</button>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item clinic">
+        <img src="/images/gallery/clinic1.jpg" alt="">
+      </div>
+
+      <div class="gallery-item clinic">
+        <img src="/images/gallery/clinic2.jpg" alt="">
+      </div>
+
+      <div class="gallery-item dental">
+        <img src="/images/gallery/dental1.jpg" alt="">
+      </div>
+
+      <div class="gallery-item dental">
+        <img src="/images/gallery/dental2.jpg" alt="">
+      </div>
+
+      <div class="gallery-item patients">
+        <img src="/images/gallery/patient1.jpg" alt="">
+      </div>
+
+      <div class="gallery-item patients">
+        <img src="/images/gallery/patient2.jpg" alt="">
+      </div>
+
+      <div class="gallery-item technology">
+        <img src="/images/gallery/tech1.jpg" alt="">
+      </div>
+
+      <div class="gallery-item technology">
+        <img src="/images/gallery/tech2.jpg" alt="">
+      </div>
+
+      <div class="gallery-item clinic">
+        <img src="/images/gallery/clinic3.jpg" alt="">
+      </div>
+
+      <div class="gallery-item dental">
+        <img src="/images/gallery/dental3.jpg" alt="">
+      </div>
+
+      <div class="gallery-item patients">
+        <img src="/images/gallery/patient3.jpg" alt="">
+      </div>
+
+      <div class="gallery-item technology">
+        <img src="/images/gallery/tech3.jpg" alt="">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="gallery-cta">
+    <div class="container">
+        <h2>Ready to Transform Your Smile?</h2>
+        <p>Book your consultation with our experienced dental specialists today.</p>
+
+        <a href="/appointment" class="btn-book dental">
+            Book Appointment
+        </a>
+    </div>
+</section>
 
     
     <footer class="site-footer">

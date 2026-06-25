@@ -1,10 +1,12 @@
+require("dotenv").config()
 const express = require("express");
 const app = express();
 const adminRoutes = require("./routes/admin");
-require("dotenv").config()
 const connectdb = require("./config/db")
 const webRoutes = require("./routes/web");
 const cookieParser = require("cookie-parser");
+const Service = require("./models/Service");
+const conditions = require("./public/js/conditions");
 
 
 
@@ -24,8 +26,26 @@ app.get('/',(req,res) => {
   res.render("index")
 })
 
-app.get("/aesthetic", (req, res) => {
-  res.render("aesthetic");
+app.get("/aesthetic", async (req, res) => {
+     try {
+
+        const services = await Service.find();
+
+        res.render("aesthetic", {
+
+            services,
+            conditions
+
+        });
+
+    } catch (error) {
+
+        console.log(error);
+
+        res.status(500).send("Server Error");
+
+    }
+
 });
 
 // Routes

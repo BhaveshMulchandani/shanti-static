@@ -44,9 +44,26 @@
 
 </div>
           </div>
-          <a href="#gallery">Gallery</a>
+
+<div class="services-dropdown-wrapper">
+    <a href="#">Conditions</a>
+
+    <div class="services-dropdown-menu">
+
+        <% conditions.forEach(condition => { %>
+
+            <a href="/conditions/<%= condition.slug %>">
+                <%= condition.title %>
+            </a>
+
+        <% }) %>
+
+    </div>
+</div>
+          <a href="/gallery">Gallery</a>
           <a href="/about">About us</a>
           <a href="/contactus">Contact Us</a>
+          <a href="/blog">Blogs</a>
           <a href="/aesthetic" class="pill-switch to-aesthetic"
             >✨ Switch to Aesthetic</a
           >
@@ -63,7 +80,7 @@
         <a href="#home">Home</a>
         <a href="#services">Services</a>
         <a href="#gallery">Gallery</a>
-        <a href="aesthetic.html" style="color: var(--aesthetic)"
+        <a href="/aesthetic" style="color: var(--aesthetic)"
           >✨ Switch to Aesthetic</a
         >
         <button class="btn-book dental">Book Appointment</button>
@@ -272,7 +289,7 @@ review: "My implant consultation with Dr. Nikunj Gupta was highly informative an
       </div>
     </section>
 
-    <section id="gallery" class="section">
+    <!-- <section id="gallery" class="section">
       <div class="container">
         <div class="section-head lite">
           <span class="kicker dental">Smile Transformations</span>
@@ -328,7 +345,7 @@ review: "My implant consultation with Dr. Nikunj Gupta was highly informative an
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section class="map-section">
   <div class="container">

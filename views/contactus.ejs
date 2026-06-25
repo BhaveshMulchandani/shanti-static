@@ -36,8 +36,26 @@
 
 </div>
           </div>
-          <a href="#gallery">Gallery</a>
+
+<div class="services-dropdown-wrapper">
+    <a href="#">Conditions</a>
+
+    <div class="services-dropdown-menu">
+
+        <% conditions.forEach(condition => { %>
+
+            <a href="/conditions/<%= condition.slug %>">
+                <%= condition.title %>
+            </a>
+
+        <% }) %>
+
+    </div>
+</div>
+          <a href="/gallery">Gallery</a>
           <a href="/about">About us</a>
+          <a href="/contactus">Contact Us</a>
+          <a href="/blog">Blogs</a>
           <a href="/aesthetic" class="pill-switch to-aesthetic"
             >✨ Switch to Aesthetic</a
           >

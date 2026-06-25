@@ -7,23 +7,57 @@
 <meta name="description" content="Skin rejuvenation, anti-aging, laser hair therapies and body contouring at Shanti Aesthetic Clinic." />
 <meta property="og:title" content="Shanti Aesthetic Clinic" />
 <meta property="og:description" content="Enhancing beauty with confidence." />
-<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="stylesheet" href="/css/style.css" />
 </head>
 <body class="page-aesthetic fade-in">
 
   <div class="switch-banner aesthetic">
     Need dental, orthodontic or implant care?
-    <a href="dental.html">🦷 Switch to Shanti Dental Clinic →</a>
+    <a href="/dental">🦷 Switch to Shanti Dental Clinic →</a>
   </div>
 
   <header class="site-nav aesthetic">
     <div class="nav-inner">
-      <a href="aesthetic.html" class="brand aesthetic"><span class="em">✨</span><span>Shanti Aesthetic Clinic</span></a>
+      <a href="/aesthetic" class="brand aesthetic"><span class="em">✨</span><span>Shanti Aesthetic Clinic</span></a>
       <nav class="nav-links">
         <a href="#home">Home</a>
         <a href="#treatments">Treatments</a>
-        <a href="#gallery">Gallery</a>
-        <a href="dental.html" class="pill-switch to-dental">🦷 Switch to Dental</a>
+        <div class="services-dropdown-wrapper">
+            <a href="#" id="servicesBtn"> Services </a>
+
+            <div class="services-dropdown-menu" id="servicesMenu">
+
+  <% services.forEach(service => { %>
+
+    <a href="/services/<%= service.slug %>">
+      <%= service.title %>
+    </a>
+
+  <% }) %>
+
+</div>
+          </div>
+
+<div class="services-dropdown-wrapper">
+    <a href="#">Conditions</a>
+
+    <div class="services-dropdown-menu">
+
+        <% conditions.forEach(condition => { %>
+
+            <a href="/conditions/<%= condition.slug %>">
+                <%= condition.title %>
+            </a>
+
+        <% }) %>
+
+    </div>
+</div>
+          <a href="/gallery">Gallery</a>
+          <a href="/about">About us</a>
+          <a href="/contactus">Contact Us</a>
+          <a href="/blog">Blogs</a>
+        <a href="/dental" class="pill-switch to-dental">🦷 Switch to Dental</a>
         <button class="btn-book aesthetic"><i data-lucide="calendar"></i> Book Skin Analysis</button>
       </nav>
       <button class="nav-toggle" aria-label="Menu" data-menu-toggle>
@@ -34,7 +68,7 @@
       <a href="#home">Home</a>
       <a href="#treatments">Treatments</a>
       <a href="#gallery">Gallery</a>
-      <a href="dental.html" style="color:var(--dental)">🦷 Switch to Dental</a>
+      <a href="/dental" style="color:var(--dental)">🦷 Switch to Dental</a>
       <button class="btn-book aesthetic">Book Skin Analysis</button>
     </div>
   </header>
@@ -121,12 +155,12 @@
       <div>
         <h4>Dental</h4>
         <ul><li>Smile Makeovers</li><li>Dental Implants</li><li>Orthodontics</li><li>General Dentistry</li></ul>
-        <a class="footer-link dental" href="dental.html">Visit Dental →</a>
+        <a class="footer-link dental" href="/dental">Visit Dental →</a>
       </div>
       <div>
         <h4>Aesthetic</h4>
         <ul><li>Skin Rejuvenation</li><li>Anti-Aging Solutions</li><li>Laser & Hair Therapies</li><li>Body Contouring</li></ul>
-        <a class="footer-link aesthetic" href="aesthetic.html">Visit Aesthetic →</a>
+        <a class="footer-link aesthetic" href="/aesthetic">Visit Aesthetic →</a>
       </div>
       <div>
         <h4>Contact</h4>

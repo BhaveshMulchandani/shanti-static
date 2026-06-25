@@ -391,3 +391,34 @@ finalBookBtn.addEventListener(
   }
 );
 
+const filterBtns=document.querySelectorAll(".gallery-filter button");
+const galleryItems=document.querySelectorAll(".gallery-item");
+
+filterBtns.forEach(btn=>{
+
+btn.addEventListener("click",()=>{
+
+filterBtns.forEach(b=>b.classList.remove("active"));
+
+btn.classList.add("active");
+
+const filter=btn.dataset.filter;
+
+galleryItems.forEach(item=>{
+
+if(filter==="all"||item.classList.contains(filter)){
+
+item.style.display="block";
+
+}else{
+
+item.style.display="none";
+
+}
+
+});
+
+});
+
+});
+
